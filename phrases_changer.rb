@@ -22,8 +22,8 @@ $conf = {
 
 #CODE OF FEATURE
 
-#This class manage of process: searches and iterate files, save changes to logs.
-#For the logic of making changes of files is reposnible class ChangeFile.
+# === This class manage of process: searches and iterate files, save changes to logs.
+# Regarding to the logic of making changes in files is reposnible class ChangeFile located in the same file.
 class PhrasesChanger
 
   DIRECTORY_PATH = $conf[:dir_path]
@@ -35,7 +35,8 @@ class PhrasesChanger
     main
   end
 
-  #void
+  # @return
+  # void
   def main
     files_list = search_in_project @phrase_we_have_now
     objChangeFile = ChangeFile.new @phrase_we_have_now
@@ -66,8 +67,8 @@ class PhrasesChanger
     end
   end
 
-  #Return files where occurs: phrase_we_have_now
-  #Array
+  # === Return files where occurs: phrase_we_have_now
+  # @return Array
   def search_in_project phrase_we_have_now
     result_files_with_phrase = []
     path_to_files = File.join(DIRECTORY_PATH, '**/*.rb')
@@ -95,7 +96,8 @@ class PhrasesChanger
     result_files_with_phrase.uniq.sort
   end
 
-  #void
+  # @return
+  # void
   def append_to_log log_hash, file_before, file_after
     raise "log_hash is not a Hash!" unless log_hash.is_a?(Hash)
     data = "\n\n+++++++++++++++++++++++++++++++++ #{Time.now.to_s} ++++++++++++++++++++++++++++++++++\n"
@@ -106,14 +108,14 @@ class PhrasesChanger
     end
   end
 
-  #String
+  # @return String
   def file_content file_path
     data = File.read(file_path)
   end
 
 
   private
-  #String
+  # @return String
   def adjust_log_name name
     change = name.strip.gsub!(':', '_')
     return change if change
@@ -123,7 +125,7 @@ class PhrasesChanger
 end
 
 
-#Class contains logic of making changes process.
+# === Class responsible of the logic of making changes process.
 class ChangeFile
 
   def initialize phrase_we_have_now
@@ -131,8 +133,8 @@ class ChangeFile
     @change_all = false
   end
 
-  #Return array which contains lines with searched phrase for indicated file
-  #Array
+  # === Return array which contains lines with searched phrase for indicated file.
+  # @return Array
   def iterate_several_file file_path
     #Iterate file line by line
     result_lines_in_file = []
@@ -147,8 +149,8 @@ class ChangeFile
     result_lines_in_file
   end
 
-  #This method ask you for confirmation if you want to make indicated change
-  #Boolean
+  # This method ask you for confirmation if you want to make indicated change.
+  # @return Boolean
   def ask_for_several_change_in_file line_to_change, file_path
     if @change_all
       puts "\n\e[39m******************************************"
@@ -175,8 +177,8 @@ class ChangeFile
     res
   end
 
-  #Returns bool value for info if changes made or problem occurs.
-  #Boolean
+  # Returns bool value for info if changes made correctly or rather problem occurs.
+  # @return Boolean
   def make line_to_change, phrase_we_have_now, phrase_we_want_to_have, file_path
     verbose = $conf[:verbose]
     if verbose
