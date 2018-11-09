@@ -16,7 +16,7 @@
 #
 PATH_TO_DIRECTORY = 'example_files' # <-- YOUR CONF Path to directory with files to reworks
 WHAT_I_WANT_TO_CHANGE = 'commodore64' # <-- YOUR CONF This is what you are changing
-WHAT_I_WANT_TO_RETRIEVE = 'Amiga CD 32' # <-- YOUR CONF This is result phrase that you want to receive.
+WHAT_I_WANT_TO_RECEIVE = 'Amiga CD 32' # <-- YOUR CONF This is result phrase that you want to receive.
 #
 #
 #***** end of CONFIGURATION *** Thats all what you have to specify *************************************
@@ -25,7 +25,7 @@ WHAT_I_WANT_TO_RETRIEVE = 'Amiga CD 32' # <-- YOUR CONF This is result phrase th
 
 $conf = {
   argv0: WHAT_I_WANT_TO_CHANGE,
-  argv1: WHAT_I_WANT_TO_RETRIEVE,
+  argv1: WHAT_I_WANT_TO_RECEIVE,
   dir_path: File.join(Dir.pwd, PATH_TO_DIRECTORY),
   log_path: File.join(Dir.pwd, 'logs'),
 }
