@@ -2,7 +2,7 @@
 # $ ruby phrases_changer.rb
 
 
-#### CONFIGURATION - the only section yoy have to change for your own using the script #####
+#### CONFIGURATION - the only section you have to change for your own using the script #####
 #
 #Please remember to specify path to directory with files !
 #
