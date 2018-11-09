@@ -1,7 +1,7 @@
 # *** Phrases Changer ***
 #
-# The most comfortable CONSOLE FEATURE to change phrases in directory recursively,
-# in the safely way, without mistakes, with log what have been changed. That`s written in Ruby.
+# The most comfortable CONSOLE FEATURE written in Ruby to change phrases in directory recursively,
+# in the safely way, without mistakes, with log what have been changed.
 #
 # This console feature in comparison to phrase changes options in many IDE ensure, you don`t be afraid
 # that something will be changed even if you don`t wish unwanted changes in some places.
