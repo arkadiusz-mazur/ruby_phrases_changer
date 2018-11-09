@@ -31,7 +31,7 @@ $conf = {
 }
 
 # === This class manage of process: searches and iterate files, save changes to logs.
-# Regarding to the logic of making changes in files is reposnible class ChangeFile located in the same file.
+# Regarding to the logic of making changes in files is responsible class ChangeFile located in the same file.
 class PhrasesChanger
 
   DIRECTORY_PATH = $conf[:dir_path]
