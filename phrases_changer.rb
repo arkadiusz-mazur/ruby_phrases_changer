@@ -1,19 +1,22 @@
-# To run it use in console in the same directory:
-# $ ruby phrases_changer.rb 'phrase we have now' 'phrase we wont to have'
+# To run it just use in console in the same directory as this script command:
+# $ ruby phrases_changer.rb
 
 
-
-#CONFIGURATION
-
-PATH_TO_DIRECTORY = 'example_files' #Please remember to specify path to directory with files !
-
+#### CONFIGURATION - the only section yoy have to change for your own using the script #####
+#
+#Please remember to specify path to directory with files !
+#
+PATH_TO_DIRECTORY = 'example_files'
+#Phrases to change
 $conf = {
-  argv0: 'commodore64', #You can specify args directly in this place instead of getting them in console
-  argv1: 'Amiga CD 32', #You can specify args directly in this place instead of getting them in console
+  argv0: 'commodore64', #This is what you are changing
+  argv1: 'Amiga CD 32', #This is result phrase that you want to retrive.
   dir_path: File.join(Dir.pwd, PATH_TO_DIRECTORY),
   log_path: File.join(Dir.pwd, 'logs'),
 }
-
+#
+#
+#### end of CONFIGURATION ###################################################################
 
 
 
@@ -208,9 +211,4 @@ class ChangeFile
   end
 end
 
-#You can specify args directly in this file instead of getting them in console.
-ARGV[0] = $conf[:argv0] unless $conf[:argv0].nil?
-ARGV[1] = $conf[:argv1] unless $conf[:argv1].nil?
-raise 'Please set first parameter: phrase_we_have_now' if ARGV[0].nil?
-raise 'Please set second parameter: phrase_we_want_to_have' if ARGV[1].nil?
-PhrasesChanger.new ARGV[0], ARGV[1]
+PhrasesChanger.new $conf[:argv0], $conf[:argv1]
