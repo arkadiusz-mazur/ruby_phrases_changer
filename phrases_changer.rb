@@ -1,7 +1,10 @@
 # *** Phrases Changer ***
 #
-# The most comfortable CONSOLE FEATURE to change phrases safely
-# and without mistakes in directory recursively
+# The most comfortable CONSOLE FEATURE to change phrases in directory recursively,
+# in the safely way, without mistakes, with log what have been changed. That`s written in Ruby.
+#
+# This console feature in comparison to phrase changes options in many IDE ensure, you don`t be afraid
+# that something will be changed even if you don`t wish unwanted changes in some places.
 
 # Fill the documentation section below.
 # To run the script just use command as below in console in the same directory as this script:
@@ -17,7 +20,6 @@ WHAT_I_WANT_TO_RETRIEVE = 'Amiga CD 32' # <-- YOUR CONF This is result phrase th
 #
 #
 #***** end of CONFIGURATION *** Thats all what you have to specify *************************************
-#*******************************************************************************************************
 
 
 
