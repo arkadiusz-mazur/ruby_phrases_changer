@@ -18,7 +18,7 @@ The name of the log corresponds to the phrase you are changing.
 To use it just set: 
 PATH_TO_DIRECTORY, 
 WHAT_I_WANT_TO_CHANGE, 
-WHAT_I_WANT_TO_RETRIEVE
+WHAT_I_WANT_TO_RECEIVE
 in configuration section in file phrases_changer.rb
 and run:
 $ ruby phrases_changer.rb
