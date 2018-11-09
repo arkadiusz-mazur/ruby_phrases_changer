@@ -15,7 +15,10 @@ All changes you made you will see in console.
 At the end of the process the log file will be generate in logs directory.
 The name of the log corresponds to the phrase you are changing.
 
-To use it just set: PATH_TO_DIRECTORY, argv0 (old phrase), argv1 (new phrase) 
+To use it just set: 
+PATH_TO_DIRECTORY, 
+WHAT_I_WANT_TO_CHANGE, 
+WHAT_I_WANT_TO_RETRIEVE
 in configuration section in file phrases_changer.rb
 and run:
 $ ruby phrases_changer.rb
