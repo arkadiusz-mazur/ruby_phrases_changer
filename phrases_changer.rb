@@ -1,26 +1,32 @@
-# To run it just use in console in the same directory as this script command:
+# *** Phrases Changer ***
+#
+# The most comfortable CONSOLE FEATURE to change phrases safely
+# and without mistakes in directory recursively
+
+# Fill the documentation section below.
+# To run the script just use command as below in console in the same directory as this script:
+#
 # $ ruby phrases_changer.rb
 
+#***** CONFIGURATION - the only section you have to change for your own using the script **************
+#
+#
+PATH_TO_DIRECTORY = 'example_files' # <-- YOUR CONF Path to directory with files to reworks
+WHAT_I_WANT_TO_CHANGE = 'commodore64' # <-- YOUR CONF This is what you are changing
+WHAT_I_WANT_TO_RETRIEVE = 'Amiga CD 32' # <-- YOUR CONF This is result phrase that you want to retrive.
+#
+#
+#***** end of CONFIGURATION *** Thats all what you have to specify *************************************
+#*******************************************************************************************************
 
-#### CONFIGURATION - the only section you have to change for your own using the script #####
-#
-#Please remember to specify path to directory with files !
-#
-PATH_TO_DIRECTORY = 'example_files'
-#Phrases to change
+
+
 $conf = {
-  argv0: 'commodore64', #This is what you are changing
-  argv1: 'Amiga CD 32', #This is result phrase that you want to retrive.
+  argv0: WHAT_I_WANT_TO_CHANGE,
+  argv1: WHAT_I_WANT_TO_RETRIEVE,
   dir_path: File.join(Dir.pwd, PATH_TO_DIRECTORY),
   log_path: File.join(Dir.pwd, 'logs'),
 }
-#
-#
-#### end of CONFIGURATION ###################################################################
-
-
-
-#CODE OF FEATURE
 
 # === This class manage of process: searches and iterate files, save changes to logs.
 # Regarding to the logic of making changes in files is reposnible class ChangeFile located in the same file.
@@ -92,7 +98,6 @@ class PhrasesChanger
       puts "\n\e[31m\e[1;4mThe phrase: '#{@phrase_we_have_now}' not found in files.\e[31m"
       exit
     end
-
     result_files_with_phrase.uniq.sort
   end
 
@@ -113,15 +118,14 @@ class PhrasesChanger
     data = File.read(file_path)
   end
 
-
   private
+
   # @return String
   def adjust_log_name name
     change = name.strip.gsub!(':', '_')
     return change if change
     return name
   end
-
 end
 
 
@@ -214,3 +218,6 @@ class ChangeFile
 end
 
 PhrasesChanger.new $conf[:argv0], $conf[:argv1]
+
+# Ruby 2.5.1
+# 2018, Arkadiusz Mazur, gmail address: programmer.rails
