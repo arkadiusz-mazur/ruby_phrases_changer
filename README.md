@@ -23,5 +23,5 @@ in configuration section in file phrases_changer.rb
 and run:
 $ ruby phrases_changer.rb
 
-The logic of script have been tested on ruby 2.5.1 version.
+The logic of script have been tested on linux-arch, ruby 2.5.1 version.
 Colors of console messages have been tested on zsh (Z Shell).
